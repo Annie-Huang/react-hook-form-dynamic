@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { z } from 'zod';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 const NoEMailSchema = z.object({
@@ -28,10 +28,21 @@ const App: FC = () => {
 
   const sendToEMail = watch('sendToEMail');
 
+  const onSubmit: SubmitHandler<FormSchemaType> = (data) => {
+    if (data.sendToEMail) {
+      console.log(data);
+    } else {
+      console.log(data);
+    }
+  };
+
   return (
     <div className='bg-gray-100 min-h-screen'>
       <div className='max-w-xl w-full mx-auto px-4 py-32'>
-        <form className='bg-white rounded-lg px-8 py-12 shadow-lg'>
+        <form
+          className='bg-white rounded-lg px-8 py-12 shadow-lg'
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <h1 className='text-orange-600 text-xl font-semibold mb-8'>
             Order Package
           </h1>
