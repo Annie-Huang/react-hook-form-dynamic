@@ -2,7 +2,10 @@ React Dynamic Form Tutorial | react-hook-form & zod (https://www.youtube.com/wat
 
 https://github.com/AustinShelby/Dynamic-React-Form/tree/main
 https://github.com/Annie-Huang/react-hook-form-dynamic
+
+https://tailwindcss.com/docs/installation/using-vite
 ----------------------------------------------------------------------------------------------------------------
 
 PS C:\react> npm create vite@latest react-hook-form-dynamic -- --template react-ts
 PS C:\react\react-hook-form-dynamic> npm install
+PS C:\react\react-hook-form-dynamic> npm install tailwindcss @tailwindcss/vite
