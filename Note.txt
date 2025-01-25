@@ -5,6 +5,7 @@ https://github.com/Annie-Huang/react-hook-form-dynamic
 
 https://tailwindcss.com/docs/installation/using-vite
 https://github.com/tailwindlabs/tailwindcss-forms
+https://github.com/tailwindlabs/tailwindcss/discussions/13292
 
 ----------------------------------------------------------------------------------------------------------------
 
@@ -12,3 +13,5 @@ PS C:\react> npm create vite@latest react-hook-form-dynamic -- --template react-
 PS C:\react\react-hook-form-dynamic> npm install
 PS C:\react\react-hook-form-dynamic> npm install tailwindcss @tailwindcss/vite
 PS C:\react\react-hook-form-dynamic> npm install -D @tailwindcss/forms
+
+Don't think @tailwindcss/forms help on any styling change.
