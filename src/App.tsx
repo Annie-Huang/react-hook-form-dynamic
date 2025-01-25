@@ -57,10 +57,11 @@ const App: FC = () => {
           {sendToEMail && (
             <label className='block mt-6'>
               <span className='block mb-1 text-gray-600'>Email</span>
+              {/* Input will be unregistered after unmount and defaultValues will be removed as well. */}
               <input
                 className='w-full rounded-lg border-gray-300 border focus:ring-0 focus:border-orange-600 p-3'
                 type='text'
-                {...register('email')}
+                {...register('email', { shouldUnregister: true })}
               />
             </label>
           )}
