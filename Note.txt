@@ -15,3 +15,6 @@ PS C:\react\react-hook-form-dynamic> npm install tailwindcss @tailwindcss/vite
 PS C:\react\react-hook-form-dynamic> npm install -D @tailwindcss/forms
 
 Don't think @tailwindcss/forms help on any styling change.
+
+
+PS C:\react\react-hook-form-dynamic> npm install react-hook-form zod @hookform/resolvers
