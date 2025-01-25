@@ -26,6 +26,8 @@ const App: FC = () => {
     resolver: zodResolver(FormSchema),
   });
 
+  const sendToEMail = watch('sendToEMail');
+
   return (
     <div className='bg-gray-100 min-h-screen'>
       <div className='max-w-xl w-full mx-auto px-4 py-32'>
@@ -36,7 +38,7 @@ const App: FC = () => {
           <label className='block'>
             <span className='block mb-1 text-gray-600'>Your name</span>
             <input
-              className='w-full rounded-lg border-gray-300 border focus:ring-0 focus:border-orange-600 py-3'
+              className='w-full rounded-lg border-gray-300 border focus:ring-0 focus:border-orange-600 p-3'
               type='text'
               {...register('name')}
             />
@@ -52,14 +54,17 @@ const App: FC = () => {
             </span>
           </label>
 
-          <label className='block mt-6'>
-            <span className='block mb-1 text-gray-600'>Email</span>
-            <input
-              className='w-full rounded-lg border-gray-300 border focus:ring-0 focus:border-orange-600 py-3'
-              type='text'
-              {...register('email')}
-            />
-          </label>
+          {sendToEMail && (
+            <label className='block mt-6'>
+              <span className='block mb-1 text-gray-600'>Email</span>
+              <input
+                className='w-full rounded-lg border-gray-300 border focus:ring-0 focus:border-orange-600 p-3'
+                type='text'
+                {...register('email')}
+              />
+            </label>
+          )}
+          <br />
           {/* You can tick and untick checkbox to see the value change */}
           <pre>{JSON.stringify(watch(), null, 2)}</pre>
 
