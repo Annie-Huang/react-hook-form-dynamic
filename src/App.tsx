@@ -1,4 +1,31 @@
-function App() {
+import { FC } from 'react';
+import { z } from 'zod';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const NoEMailSchema = z.object({
+  name: z.string(),
+  sendToEMail: z.literal(false),
+});
+
+const EMailSchema = z.object({
+  name: z.string(),
+  sendToEMail: z.literal(true),
+  email: z.string().email(),
+});
+
+const FormSchema = z.discriminatedUnion('sendToEMail', [
+  NoEMailSchema,
+  EMailSchema,
+]);
+
+type FormSchemaType = z.infer<typeof FormSchema>;
+
+const App: FC = () => {
+  const { register, watch, handleSubmit } = useForm<FormSchemaType>({
+    resolver: zodResolver(FormSchema),
+  });
+
   return (
     <div className='bg-gray-100 min-h-screen'>
       <div className='max-w-xl w-full mx-auto px-4 py-32'>
@@ -38,6 +65,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
